@@ -27,6 +27,8 @@ class Solution:
                 return left 
             if right:
                 return right 
+            minthu = shutup
+
 
         
         
