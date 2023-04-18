@@ -30,7 +30,7 @@ public:
     int next() {
         int result = res[ptr++];
         return result;
-        
+
     }
 
     bool hasNext() {
