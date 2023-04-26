@@ -33,3 +33,7 @@ public:
 
     }
 };
+
+
+// AC -> DFG
+// AD, BF, CG
