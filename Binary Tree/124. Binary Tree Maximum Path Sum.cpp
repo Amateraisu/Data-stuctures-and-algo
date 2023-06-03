@@ -13,7 +13,7 @@ class Solution {
     int res = INT_MIN;
 public:
     int maxPathSum(TreeNode* root) {
-        // every node will return 
+        // every node will return
         dfs(root);
         return res;
     }
