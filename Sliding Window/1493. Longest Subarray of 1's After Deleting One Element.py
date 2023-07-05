@@ -2,7 +2,7 @@ class Solution:
     def longestSubarray(self, nums: List[int]) -> int:
         # I should delete one element from it
         res = 0
-        l = 0 
+        l = 0
         n = len(nums)
         c = 0
         for r in range(n):
