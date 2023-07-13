@@ -27,5 +27,4 @@ class Solution:
         for i in range(n):
             if not dfs(i):
                 return False
-
         return True
