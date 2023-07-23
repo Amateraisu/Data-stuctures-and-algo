@@ -5,7 +5,6 @@ public:
 
     int findPaths(int m, int n, int maxMove, int startRow, int startColumn) {
         vector<vector<vector<int>>> dp(m , vector<vector<int>>(n, vector<int>(maxMove + 1, -1)));
-
         return dfs(dp, startRow, startColumn, m, n, maxMove);
     }
     int dfs(vector<vector<vector<int>>>& dp, int r, int c, int m, int n, int k) {
