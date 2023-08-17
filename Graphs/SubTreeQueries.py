@@ -1,5 +1,8 @@
 import collections
 from math import ceil, log2
+import io, os, time, sys
+
+sys.setrecursionlimit(10**7)
 class segment_tree:
     # merge(left, right): function used to merge the two halves
     # basef(value): function applied on individual values
@@ -52,7 +55,8 @@ class segment_tree:
         self._update_util(0, 0, self.n - 1, x, v)
         self.array[x] = v
 
-
+input = io.BytesIO(os.read(0, \
+     os.fstat(0).st_size)).readline
 n, q = input().split()
 n = int(n)
 q = int(q)
@@ -69,7 +73,7 @@ dp = [[], [0 for i in range(n)], []]
 visited = set()
 mapper = collections.defaultdict(int)
 
-
+#O(N)
 def dfs(currentNode):
     dp[0].append(currentNode)
     mapper[currentNode] = len(dp[0]) - 1
@@ -85,6 +89,7 @@ def dfs(currentNode):
 
 dfs(1)
 
+#O(N)
 tree = segment_tree(dp[2])
 
 for i in range(q):
@@ -94,8 +99,8 @@ for i in range(q):
     if v[0] == 2:
         newIndex = mapper[v[1]]
         size = dp[1][newIndex]
-
-        print(tree.query(newIndex, newIndex + size - 1))
+        res = tree.query(newIndex, newIndex + size - 1)
+        sys.stdout.write(str(res)+"\n")
     else:
         newIndex = mapper[v[1]]
         tree.update(newIndex, v[2])
